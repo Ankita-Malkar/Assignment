@@ -1,0 +1,20 @@
+<html>
+  <body>
+   <form  class="site-form" action="{% url 'upload_csv' %}" method="POST" enctype="multipart/form-data"> 
+    {% csrf_token %}
+    <div>
+      <label for="name">File: </label>
+      <div>
+        <input type="file" id="csv_file" name="csv_file" required="True">
+      </div>          
+    </div>
+    <div>          
+      <div style="margin-bottom:10px;">
+         <button> <span style="margin-right:5px;"></span>Upload </button>
+      </div> 
+    </div>
+    </form>
+    {% if file_invalid %} <strong>File is not CSV type</strong> {% endif %}
+
+  </body>
+    </html>
